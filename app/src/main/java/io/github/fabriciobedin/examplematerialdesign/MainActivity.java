@@ -122,7 +122,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_compartilhar) {
 
         } else if (id == R.id.nav_enviar) {
-
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
